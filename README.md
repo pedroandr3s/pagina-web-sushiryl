@@ -39,8 +39,8 @@ sushiryl.github.io/
 Clona este repositorio en tu máquina local:
 bash
 Copiar código
-git clone https://github.com/sushiryl/sushiryl.github.io.git
-Abre el archivo index.html en tu navegador favorito.
+git clone https://github.com/pedroandr3s/sushiryl.git
+Abre el archivo index.html en tu navegador favorito o en revisa la pagina levantada en https://sushiryl.github.io/.
 Explora el menú, agrega productos al carrito y realiza un pedido.
 🤝 Contribuciones
 ¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar este proyecto, no dudes en abrir un issue o enviar un pull request.
