@@ -16,7 +16,6 @@ Crear una página web interactiva que permita a los usuarios explorar un menú d
 - Arquitectura Frontend: Construido con tecnologías web estándar.
 
 
-
 ## 🛠️ Tecnologías Utilizadas
 
 - HTML5: Estructura semántica del sitio web.
