@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi R&L</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <meta property="og:title" content="Sushi R&L">
+    <meta property="og:description" content="El mejor sushi de San Carlos">
+    <meta property="og:image" content="https://github.com/sushiryl/sushiryl.github.io/img/logo.jpg">
+    <meta property="og:url" content="https://sushiryl.github.io/">
+    <meta property="og:type" content="website">
+    <style>
+        /* Estilo para el botón flotante del carrito */
+        #floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #ff348b;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        #floating-btn:hover {
+            background-color: #ff348b;
+        }
+
+        #floating-btn img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .promo-ite {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se coloquen en columnas */
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center; /* Centra el texto */
+    padding: 10px;
+    width: auto; /* Ajusta el ancho automáticamente */
+    max-width: 100%; /* Limita el ancho al contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    word-wrap: break-word; /* Permite que el texto se divida en palabras largas */
+}
+
+.promo-ite .product-image {
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    margin-bottom: 10px; /* Espaciado entre la imagen y el contenido */
+}
+
+.promo-ite p {
+    margin: 10px 0; /* Espaciado uniforme para los párrafos */
+    line-height: 1.5; /* Mejora la legibilidad del texto */
+}
+
+.promo-ite .old-price {
+    font-size: 14px; /* Ajusta el tamaño del texto dentro del contenido antiguo */
+    color: gray; /* Cambia el color para diferenciarlo */
+}
+
+.promo-ite .add-to-cart {
+    background-color: #ff348b; /* Color del botón */
+    color: white; /* Texto del botón */
+    padding: 10px 15px; /* Tamaño del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.promo-ite .add-to-cart:hover {
+    background-color: #e02a76; /* Color al pasar sobre el botón */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="img/logo.jpg" alt="Logo Sushi R&L" class="logo">
+            <button class="menu-toggle" id="menu-toggle">
+                ☰
+            </button>
+            <nav id="nav-menu" class="hidden">
+                <ul>
+                     <li><a href="#handrolls">Hand rolls</a></li>
+                    <li><a href="#sushiburger">Sushi Burger</a></li>
+                    <li><a href="#pizza">Pizza</a></li>
+                    <li><a href="#handrollsmayor">Por Mayor</a></li>
+                    <li><a href="#potes">Potes</a></li>
+                 </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Sushi Section -->
+    <section id="sushi">
+        <h2>Sushi</h2>
+        <div class="promo-list">
+            <div class="promo-item">
+                <img src="img/promo1.jpg" alt="Promo 1" class="product-image">
+                <h3>Promo 1</h3>
+                 <p><strong>$8.000</strong></p>
+                <button class="add-to-cart" data-name="Promo 1" data-price="8000">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/promo111.jpg" alt="Promo pollo" class="product-image">
+                <h3>Promo Especial Pollos</h3>
+                 <p><strong>$9.000</strong></p>
+                <button class="add-to-cart" data-name="Promo Especial Pollos" data-price="9000">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/promo2.jpg" alt="Promo 2" class="product-image">
+                <h3>Promo 2</h3>
+                 <p><strong>$9.500</strong></p>
+                <button class="add-to-cart" data-name="Promo 2" data-price="9500">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/promo3.jpg" alt="Promo 3" class="product-image">
+                <h3>Promo 3</h3>
+                 <p><strong>$11.000</strong></p>
+                <button class="add-to-cart" data-name="Promo 3" data-price="11000">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/50.jpeg" alt="Promo 50" class="product-image">
+                <h3>Promo 50 Cortes mixtos</h3>
+                <p>
+                        <span class="old-price">
+                        -20 cortes fritos<br>
+                        -10 cortes en Nori<br>
+                        -10 cortes en Palta<br>
+                        -10 cortes en Queso<br><br>
+                        Pollo-Palta-Queso<br>
+                        Pollo crispy-Palta-Queso<br>
+                        kanikama-Palta-Queso<br>
+                        kanikama crispy-Palta-Queso<br>
+                        Camaron-Palta-Queso</span>
+                    </p>
+                <p><strong>$18.500</strong></p>
+                <button class="add-to-cart" data-name="Promo 50 Cortes mixtos" data-price="18500">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/70.jpeg" alt="Promo 70" class="product-image">
+                <h3>Promo 70 Cortes mixtos</h3>
+                 </p>
+                <p><strong>$24.000</strong></p>
+                <button class="add-to-cart" data-name="Promo 70 Cortes mixtos" data-price="24000">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/100.jpeg" alt="Promo 100" class="product-image">
+                <h3>Promo 100 Cortes mixtos</h3>
+                 <p><strong>$32.500</strong></p>
+                <button class="add-to-cart" data-name="Promo 100 Cortes mixtos" data-price="32500">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hand rolls Section -->
+    <section id="handrolls">
+        <h2>Hand rolls</h2>
+        <div class="promo-list">
+            <div class="promo-item">
+                <img src="img/handroll.jpg" alt="Promo 1" class="product-image">
+                <h3>Hand rolls Pollo</h3>
+                 <p><strong>$3.000</strong></p>
+                <button class="add-to-cart" data-name="Hand rolls Pollo" data-price="3000">Agregar al carrito</button>
+            </div>
+            <div class="promo-item"> 
+               <img src="img/kanikama.jpeg" alt="Promo 1" class="product-image">
+                <h3>Hand rolls kanikama</h3>
+                 <p><strong>$3.000</strong></p>
+                <button class="add-to-cart" data-name="Hand rolls kanikama" data-price="3000">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/cama.jpeg" alt="Promo 1" class="product-image">
+                <h3>Hand rolls Camarón</h3>
+                 <p><strong>$3.500</strong></p>
+                <button class="add-to-cart" data-name="Hand rolls Camarón" data-price="3500">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/pollocrispy.jpg" alt="Promo 1" class="product-image">
+                <h3>Hand rolls Pollo crispy</h3>
+                 <p><strong>$3.500</strong></p>
+                <button class="add-to-cart" data-name="Hand rolls Pollo crispy" data-price="3500">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/camaroncrispy.jpeg" alt="Promo 1" class="product-image">
+                <h3>Hand rolls Camarón crispy</h3>
+                 <p><strong>$3.700</strong></p>
+                <button class="add-to-cart" data-name="Hand rolls Camarón crispy" data-price="3700">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/vacuno.jpg" alt="Promo 1" class="product-image">
+                <h3>Hand rolls Vacuno</h3>
+                 <p><strong>$4.000</strong></p>
+                <button class="add-to-cart" data-name="Hand rolls Vacuno" data-price="4000">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sushi Burger Section -->
+    <section id="sushiburger">
+        <h2>Sushi Burger</h2>
+        <div class="promo-list">
+            <div class="promo-item">
+                <img src="img/burguer.jpeg" alt="Promo 1" class="product-image">
+                <h3>Promo Sushi Burger</h3>
+                 <p><strong>$4.990</strong></p>
+                <button class="add-to-cart" data-name="Promo Sushi Burger" data-price="4990">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pizza Section -->
+    <section id="pizza">
+        <h2>Pizzas</h2>
+        <div class="promo-list">
+            <div class="promo-item">
+                <img src="img/pizza1.jpg" alt="Promo 1" class="product-image">
+                <h3>Pizza 1</h3>
+                <p>Pollo, Queso, Orégano.</p>
+                <p><strong>$9.000</strong></p>
+                <button class="add-to-cart" data-name="Pizza 1" data-price="9000">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/pizza2.jpg" alt="Promo 1" class="product-image">
+                <h3>Pizza 2</h3>
+                <p>Vacuno, Queso, Orégano.</p>
+                <p><strong>$10.000</strong></p>
+                <button class="add-to-cart" data-name="Pizza 2" data-price="10000">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hand rolls por Mayor Section -->
+    <section id="handrollsmayor">
+        <h2>Hand rolls por Mayor</h2>
+        
+        <div class="promo-list">
+            <div class="promo-item">
+                <img src="img/pormayor.jpg " alt="Promo 1" class="product-image">
+                <h3>Hand rolls por mayor(desde 10)</h3>
+                <p>Pollo o kanikama</p>
+                <p><strong>$1.500</strong></p>
+                <button class="add-to-cart" data-name="Hand rolls por mayor" data-price="1500">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Potes Section -->
+    <section id="potes">
+        <h2>Potes</h2>
+        <div class="promo-list">
+            <div class="promo-item">
+                <img src="img/soya.jpeg" alt="Promo 1" class="product-image">
+                <h3>Pote Soya</h3>
+                <p>1 soya.</p>
+                <p><strong>$100</strong></p>
+                <button class="add-to-cart" data-name="Pote Soya" data-price="100">Agregar al carrito</button>
+            </div>
+            <div class="promo-item">
+                <img src="img/agri.jpeg" alt="Promo 1" class="product-image">
+                <h3>Pote Agridulce</h3>
+                <p>1 agridulce.</p>
+                <p><strong>$200</strong></p>
+                <button class="add-to-cart" data-name="Pote Agridulce" data-price="200">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+<!-- Botón flotante -->
+<a href="carrito.html" id="floating-btn">
+    <img src="img/carro.png" alt="Carrito">
+    <span id="cart-count" class="cart-count">0</span> <!-- Aquí se mostrará la cantidad de productos -->
+</a>
+
+</body>
+<script>
+    // Escucha el clic del botón para abrir/cerrar el menú
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('hidden'); // Alterna la visibilidad del menú
+    });
+</script>
+<script>
+    // Aquí va el código JavaScript
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.dataset.name; // Nombre del producto
+            const price = parseInt(button.dataset.price, 10); // Precio del producto
+    
+            if (!name || isNaN(price)) {
+                console.error('Error: el producto no tiene nombre o precio válido.');
+                return;
+            }
+    
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            const existingItem = cart.find(item => item.name === name);
+    
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+    
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            updateCartCount();
+        });
+    });
+    
+    // Función para actualizar el contador del carrito
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById('cart-count').textContent = totalItems;
+    }
+    
+    // Inicializar el contador al cargar la página
+    updateCartCount();
+    </script>
+    
+</html>
