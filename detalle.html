@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Producto - Sushi R&L</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <meta property="og:title" content="Detalle Producto - Sushi R&L">
+    <meta property="og:description" content="Detalles del producto seleccionado en Sushi R&L">
+    <meta property="og:image" content="https://github.com/sushiryl/sushiryl.github.io/img/logo.jpg">
+    <meta property="og:url" content="https://sushiryl.github.io/">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="img/logo.jpg" alt="Logo Sushi R&L" class="logo">
+            <a href="index.html" class="back-btn">← Volver a la tienda</a>
+        </div>
+    </header>
+
+    <section class="product-detail">
+        <div class="image-container">
+            <img id="product-image" src="" alt="Imagen del producto">
+        </div>
+        <h2 id="product-name">Nombre del Producto</h2>
+        <p id="product-description">Descripción del producto aquí...</p>
+        <p class="price" id="product-price">$0.00</p>
+        <button class="add-to-cart" id="add-to-cart-btn">Agregar al carrito</button>
+    </section>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id'); 
+
+        const products = {
+            "promo-basic-1": {
+                name: "Promo 1",
+                description: "20 cortes kanikama 10 cortes pollo",
+                price: 8000,
+                image: "img/promo1.jpg"
+            },
+            "promo-pollo-special": {
+                name: "Promo Especial Pollo",
+                description: "30 cortes Pollo-Palta-Queso",
+                price: 9000,
+                image: "img/promo111.jpg"
+            },
+            "promo-basic-2": {
+                name: "Promo 2",
+                description: "20 kanikama-Palta-Queso<br>10 Pollo-Palta-Queso", 
+                price: 9500,
+                image: "img/promo2.jpg"
+            },
+            "promo-basic-3": {
+                name: "Promo 3",
+                description: " Pollo-Palta-Queso<br>kanikama-Palta-Queso<br> Camaron-Palta-Queso",
+                price: 11000,
+                image: "img/promo3.jpg"
+            },
+            "promo-50-mix": {
+                name: "Promo 50 Cortes mixtos",
+                description: "-20 cortes fritos<br>-10 cortes en Nori<br>-10 cortes en Palta<br>-10 cortes en Queso<br><br>Pollo-Palta-Queso<br>Pollo crispy-Palta-Queso<br>kanikama-Palta-Queso<br>kanikama crispy-Palta-Queso<br>Camaron-Palta-Queso",
+                price: 18500,
+                image: "img/50.jpeg"
+            },
+            "promo-70-mix": {
+                name: "Promo 70 Cortes mixtos",
+                description: "-20 cortes fritos<br>-20 cortes en Nori<br>-20 cortes en Palta<br>-10 cortes en Queso<br><br>Pollo-Palta-Queso<br>Pollo crispy-Palta-Queso<br>kanikama-Palta-Queso<br>kanikama crispy-Palta-Queso<br>Camaron-Palta-Queso",
+                price: 24000,
+                image: "img/70.jpeg"
+            },
+            "promo-100-mix": {
+                name: "Promo 100 Cortes mixtos",
+                description: "-50 cortes fritos<br>-20 cortes en Nori<br>-10 cortes en Palta<br>-20 cortes en Queso<br><br>Pollo-Palta-Queso<br>Pollo crispy-Palta-Queso<br>kanikama-Palta-Queso<br>kanikama crispy-Palta-Queso<br>Camaron-Palta-Queso",
+                price: 32500,
+                image: "img/100.jpeg"
+            },
+            "handroll-pollo": {
+                name: "Hand rolls Pollo",
+                description: "Pollo-Palta-Queso",
+                price: 3000,
+                image: "img/pollo.jpeg"
+            },
+            "handroll-kanikama": {
+                name: "Hand rolls kanikama",
+                description: "kanikama-Palta-Queso",
+                price: 3000,
+                image: "img/kanikama.jpeg"
+            },
+            "handroll-camaron": {
+                name: "Hand rolls Camaron",
+                description: "Camaron-Palta-Queso",
+                price: 3500,
+                image: "img/cama.jpeg"
+            },
+            "handroll-pollo-crispy": {
+                name: "Hand rolls Pollo crispy",
+                description: "Pollo crispy-Palta-Queso",
+                price: 3500,
+                image: "img/pollocrispy.jpg"
+            },
+            "handroll-camaron-crispy": {
+                name: "Hand rolls Camaron crispy",
+                description: "Camaron crispy-Palta-Queso",
+                price: 3700,
+                image: "img/camaroncrispy.jpeg"
+            },
+            "handroll-vacuno": {
+                name: "Hand rolls Vacuno",
+                description: "Vacuno-Palta-Queso",
+                price: 4000,
+                image: "img/vacuno.jpg"
+            },
+            "sushi-burger": {
+                name: "Sushi Burger",
+                description: "Pollo-Palta-Queso o kanikama-Palta-Queso",
+                price: 4990,
+                image: "img/burguer.jpeg"
+            },
+            "pizza-pollo": {
+                name: "Pizza 1",
+                description: "Salsa de tomate-Pollo-Queso-Oregano",
+                price: 9000,
+                image: "img/pizza1.jpg"
+            },
+            "pizza-vacuno": {
+                name: "Pizza 2",
+                description: "Salsa de tomate-Vacuno-Queso-Oregano",
+                price: 10000,
+                image: "img/pizza3.jpeg"
+            },
+            "handroll-wholesale": {
+                name: "Hand rolls por mayor (desde 10 unidades)",
+                description: "Pollo-Palta-Queso o kanikama-Palta-Queso",
+                price: 1500,
+                image: "img/pormayor.jpg"
+            },
+            "pote-soya": {
+                name: "Pote soya",
+                description: "1 soya",
+                price: 100,
+                image: "img/soya.jpeg"
+            },
+            "pote-agridulce": {
+                name: "Pote agridulce",
+                description: "1 agridulce",
+                price: 200,
+                image: "img/agri.jpeg"
+            }
+        };
+
+        const product = products[productId];
+
+        if (product) {
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-description').innerHTML = product.description; 
+            document.getElementById('product-price').textContent = `$${product.price}`;
+            document.getElementById('add-to-cart-btn').dataset.name = product.name;
+            document.getElementById('add-to-cart-btn').dataset.price = product.price;
+        } else {
+            window.location.href = 'index.html'; 
+        }
+
+        document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+            alert(`Producto ${this.dataset.name} agregado al carrito!`);
+        });
+    </script>
+</body>
+</html>

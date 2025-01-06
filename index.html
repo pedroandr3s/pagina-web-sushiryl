@@ -104,142 +104,125 @@
                     <li><a href="#sushiburger">Sushi Burger</a></li>
                     <li><a href="#pizza">Pizza</a></li>
                     <li><a href="#handrollsmayor">Por Mayor</a></li>
-                    <li><a href="#potes">Potes</a></li>
                  </ul>
             </nav>
         </div>
     </header>
-    <!-- Sushi Section -->
     <section id="sushi">
         <h2>Sushi</h2>
         <div class="promo-list">
-            <div class="promo-item">
+            <div class="promo-item" id="promo-basic-1" onclick="redirectToDetail(this.id, event)">
                 <img src="img/promo1.jpg" alt="Promo 1" class="product-image">
                 <h3>Promo 1</h3>
-                 <p><strong>$8.000</strong></p>
+                <p><strong>$8.000</strong></p>
                 <button class="add-to-cart" data-name="Promo 1" data-price="8000">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
+            <div class="promo-item" id="promo-pollo-special" onclick="redirectToDetail(this.id, event)">
                 <img src="img/promo111.jpg" alt="Promo pollo" class="product-image">
                 <h3>Promo Especial Pollos</h3>
-                 <p><strong>$9.000</strong></p>
+                <p><strong>$9.000</strong></p>
                 <button class="add-to-cart" data-name="Promo Especial Pollos" data-price="9000">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
+            <div class="promo-item" id="promo-basic-2" onclick="redirectToDetail(this.id, event)">
                 <img src="img/promo2.jpg" alt="Promo 2" class="product-image">
                 <h3>Promo 2</h3>
-                 <p><strong>$9.500</strong></p>
+                <p><strong>$9.500</strong></p>
                 <button class="add-to-cart" data-name="Promo 2" data-price="9500">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
+            <div class="promo-item" id="promo-basic-3" onclick="redirectToDetail(this.id, event)">
                 <img src="img/promo3.jpg" alt="Promo 3" class="product-image">
                 <h3>Promo 3</h3>
-                 <p><strong>$11.000</strong></p>
+                <p><strong>$11.000</strong></p>
                 <button class="add-to-cart" data-name="Promo 3" data-price="11000">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
+            <div class="promo-item" id="promo-50-mix" onclick="redirectToDetail(this.id, event)">
                 <img src="img/50.jpeg" alt="Promo 50" class="product-image">
                 <h3>Promo 50 Cortes mixtos</h3>
-                <p>
-                        <span class="old-price">
-                        -20 cortes fritos<br>
-                        -10 cortes en Nori<br>
-                        -10 cortes en Palta<br>
-                        -10 cortes en Queso<br><br>
-                        Pollo-Palta-Queso<br>
-                        Pollo crispy-Palta-Queso<br>
-                        kanikama-Palta-Queso<br>
-                        kanikama crispy-Palta-Queso<br>
-                        Camaron-Palta-Queso</span>
-                    </p>
+                
                 <p><strong>$18.500</strong></p>
                 <button class="add-to-cart" data-name="Promo 50 Cortes mixtos" data-price="18500">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
+            <div class="promo-item" id="promo-70-mix" onclick="redirectToDetail(this.id, event)">
                 <img src="img/70.jpeg" alt="Promo 70" class="product-image">
                 <h3>Promo 70 Cortes mixtos</h3>
-                 </p>
                 <p><strong>$24.000</strong></p>
                 <button class="add-to-cart" data-name="Promo 70 Cortes mixtos" data-price="24000">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
+            <div class="promo-item" id="promo-100-mix" onclick="redirectToDetail(this.id, event)">
                 <img src="img/100.jpeg" alt="Promo 100" class="product-image">
                 <h3>Promo 100 Cortes mixtos</h3>
-                 <p><strong>$32.500</strong></p>
+                <p><strong>$32.500</strong></p>
                 <button class="add-to-cart" data-name="Promo 100 Cortes mixtos" data-price="32500">Agregar al carrito</button>
             </div>
         </div>
     </section>
 
-    <!-- Hand rolls Section -->
     <section id="handrolls">
         <h2>Hand rolls</h2>
         <div class="promo-list">
-            <div class="promo-item">
-                <img src="img/handroll.jpg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="handroll-pollo" onclick="redirectToDetail(this.id, event)">
+                <img src="img/handroll.jpg" alt="Hand roll Pollo" class="product-image">
                 <h3>Hand rolls Pollo</h3>
-                 <p><strong>$3.000</strong></p>
+                <p><strong>$3.000</strong></p>
                 <button class="add-to-cart" data-name="Hand rolls Pollo" data-price="3000">Agregar al carrito</button>
             </div>
-            <div class="promo-item"> 
-               <img src="img/kanikama.jpeg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="handroll-kanikama" onclick="redirectToDetail(this.id, event)">
+                <img src="img/kanikama.jpeg" alt="Hand roll Kanikama" class="product-image">
                 <h3>Hand rolls kanikama</h3>
-                 <p><strong>$3.000</strong></p>
+                <p><strong>$3.000</strong></p>
                 <button class="add-to-cart" data-name="Hand rolls kanikama" data-price="3000">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
-                <img src="img/cama.jpeg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="handroll-camaron" onclick="redirectToDetail(this.id, event)">
+                <img src="img/cama.jpeg" alt="Hand roll Camarón" class="product-image">
                 <h3>Hand rolls Camarón</h3>
-                 <p><strong>$3.500</strong></p>
+                <p><strong>$3.500</strong></p>
                 <button class="add-to-cart" data-name="Hand rolls Camarón" data-price="3500">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
-                <img src="img/pollocrispy.jpg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="handroll-pollo-crispy" onclick="redirectToDetail(this.id, event)">
+                <img src="img/pollocrispy.jpg" alt="Hand roll Pollo Crispy" class="product-image">
                 <h3>Hand rolls Pollo crispy</h3>
-                 <p><strong>$3.500</strong></p>
+                <p><strong>$3.500</strong></p>
                 <button class="add-to-cart" data-name="Hand rolls Pollo crispy" data-price="3500">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
-                <img src="img/camaroncrispy.jpeg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="handroll-camaron-crispy" onclick="redirectToDetail(this.id, event)">
+                <img src="img/camaroncrispy.jpeg" alt="Hand roll Camarón Crispy" class="product-image">
                 <h3>Hand rolls Camarón crispy</h3>
-                 <p><strong>$3.700</strong></p>
+                <p><strong>$3.700</strong></p>
                 <button class="add-to-cart" data-name="Hand rolls Camarón crispy" data-price="3700">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
-                <img src="img/vacuno.jpg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="handroll-vacuno" onclick="redirectToDetail(this.id, event)">
+                <img src="img/vacuno.jpg" alt="Hand roll Vacuno" class="product-image">
                 <h3>Hand rolls Vacuno</h3>
-                 <p><strong>$4.000</strong></p>
+                <p><strong>$4.000</strong></p>
                 <button class="add-to-cart" data-name="Hand rolls Vacuno" data-price="4000">Agregar al carrito</button>
             </div>
         </div>
     </section>
 
-    <!-- Sushi Burger Section -->
     <section id="sushiburger">
         <h2>Sushi Burger</h2>
         <div class="promo-list">
-            <div class="promo-item">
-                <img src="img/burguer.jpeg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="sushi-burger" onclick="redirectToDetail(this.id, event)">
+                <img src="img/burguer.jpeg" alt="Sushi Burger" class="product-image">
                 <h3>Promo Sushi Burger</h3>
-                 <p><strong>$4.990</strong></p>
+                <p><strong>$4.990</strong></p>
                 <button class="add-to-cart" data-name="Promo Sushi Burger" data-price="4990">Agregar al carrito</button>
             </div>
         </div>
     </section>
 
-    <!-- Pizza Section -->
     <section id="pizza">
         <h2>Pizzas</h2>
         <div class="promo-list">
-            <div class="promo-item">
-                <img src="img/pizza1.jpg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="pizza-pollo" onclick="redirectToDetail(this.id, event)">
+                <img src="img/pizza1.jpg" alt="Pizza Pollo" class="product-image">
                 <h3>Pizza 1</h3>
                 <p>Pollo, Queso, Orégano.</p>
                 <p><strong>$9.000</strong></p>
                 <button class="add-to-cart" data-name="Pizza 1" data-price="9000">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
-                <img src="img/pizza2.jpg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="pizza-vacuno" onclick="redirectToDetail(this.id, event)">
+                <img src="img/pizza2.jpg" alt="Pizza Vacuno" class="product-image">
                 <h3>Pizza 2</h3>
                 <p>Vacuno, Queso, Orégano.</p>
                 <p><strong>$10.000</strong></p>
@@ -248,13 +231,11 @@
         </div>
     </section>
 
-    <!-- Hand rolls por Mayor Section -->
     <section id="handrollsmayor">
         <h2>Hand rolls por Mayor</h2>
-        
         <div class="promo-list">
-            <div class="promo-item">
-                <img src="img/pormayor.jpg " alt="Promo 1" class="product-image">
+            <div class="promo-item" id="handroll-wholesale" onclick="redirectToDetail(this.id, event)">
+                <img src="img/pormayor.jpg" alt="Hand rolls por Mayor" class="product-image">
                 <h3>Hand rolls por mayor(desde 10)</h3>
                 <p>Pollo o kanikama</p>
                 <p><strong>$1.500</strong></p>
@@ -263,19 +244,18 @@
         </div>
     </section>
 
-    <!-- Potes Section -->
     <section id="potes">
         <h2>Potes</h2>
         <div class="promo-list">
-            <div class="promo-item">
-                <img src="img/soya.jpeg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="pote-soya" onclick="redirectToDetail(this.id, event)">
+                <img src="img/soya.jpeg" alt="Pote Soya" class="product-image">
                 <h3>Pote Soya</h3>
                 <p>1 soya.</p>
                 <p><strong>$100</strong></p>
                 <button class="add-to-cart" data-name="Pote Soya" data-price="100">Agregar al carrito</button>
             </div>
-            <div class="promo-item">
-                <img src="img/agri.jpeg" alt="Promo 1" class="product-image">
+            <div class="promo-item" id="pote-agridulce" onclick="redirectToDetail(this.id, event)">
+                <img src="img/agri.jpeg" alt="Pote Agridulce" class="product-image">
                 <h3>Pote Agridulce</h3>
                 <p>1 agridulce.</p>
                 <p><strong>$200</strong></p>
@@ -283,57 +263,65 @@
             </div>
         </div>
     </section>
-<!-- Botón flotante -->
-<a href="carrito.html" id="floating-btn">
-    <img src="img/carro.png" alt="Carrito">
-    <span id="cart-count" class="cart-count">0</span> <!-- Aquí se mostrará la cantidad de productos -->
-</a>
 
-</body>
-<script>
-    // Escucha el clic del botón para abrir/cerrar el menú
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        const navMenu = document.getElementById('nav-menu');
-        navMenu.classList.toggle('hidden'); // Alterna la visibilidad del menú
-    });
-</script>
-<script>
-    // Aquí va el código JavaScript
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', () => {
-            const name = button.dataset.name; // Nombre del producto
-            const price = parseInt(button.dataset.price, 10); // Precio del producto
-    
-            if (!name || isNaN(price)) {
-                console.error('Error: el producto no tiene nombre o precio válido.');
+    <!-- Floating cart button -->
+    <a href="carrito.html" id="floating-btn">
+        <img src="img/carro.png" alt="Carrito">
+        <span id="cart-count" class="cart-count">0</span>
+    </a>
+
+    <!-- All previous scripts remain exactly the same -->
+    <script>
+        // Menu toggle script
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.dataset.name;
+                const price = parseInt(button.dataset.price, 10);
+                
+                if (!name || isNaN(price)) {
+                    console.error('Error: el producto no tiene nombre o precio válido.');
+                    return;
+                }
+                
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                const existingItem = cart.find(item => item.name === name);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+                
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+            });
+        });
+
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').textContent = totalItems;
+        }
+
+        // Product detail redirect
+        function redirectToDetail(productId, event) {
+            if (event.target.classList.contains('add-to-cart')) {
                 return;
             }
-    
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-            const existingItem = cart.find(item => item.name === name);
-    
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ name, price, quantity: 1 });
-            }
-    
-            localStorage.setItem('cart', JSON.stringify(cart));
-    
-            updateCartCount();
-        });
-    });
-    
-    // Función para actualizar el contador del carrito
-    function updateCartCount() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        document.getElementById('cart-count').textContent = totalItems;
-    }
-    
-    // Inicializar el contador al cargar la página
-    updateCartCount();
+            const encodedId = encodeURIComponent(productId);
+            window.location.href = `detalle.html?id=${encodedId}`;
+        }
+
+        // Initialize cart count
+        updateCartCount();
     </script>
-    
+</body>
 </html>
